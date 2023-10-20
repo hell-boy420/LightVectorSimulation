@@ -64,19 +64,23 @@ export default class setupEnv{
         const mirrorMaterial = new THREE.MeshBasicMaterial({color:0xFFFFFF,side:THREE.DoubleSide})
 
         const mirror1Geometry=new THREE.BoxGeometry(21/2,24,0.1)
-        const mirror1=new THREE.Mesh(mirror1Geometry,mirrorMaterial)
+        
+        mirror1Geometry.translate(21/2,0,0)
         mirror1Geometry.rotateX(Math.PI/2)
+        mirror1Geometry.rotateZ(Math.PI/3)
         
         const pivotGeometry = new THREE.SphereGeometry( 2, 32, 16 ); 
         const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } ); 
         const sphere = new THREE.Mesh( pivotGeometry, material ); 
         sphere.position.set(21/2+1,10,0)
         
-        mirror1Geometry.translate(21/4-1,0,0)
+        mirror1Geometry.translate(21/4+21/8,5,0)
+        
+        const mirror1=new THREE.Mesh(mirror1Geometry,mirrorMaterial)
         sphere.add(mirror1)
         
-        sphere.rotateZ(Math.PI/4)
-        this.rObjects.add(sphere)
+
+        this.rObjects.add(mirror1)
 
         return this.rObjects
 
