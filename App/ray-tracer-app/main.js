@@ -4,6 +4,6 @@ import SceneInit from "./scripts/sceneInit"
 
 const test = new SceneInit('bg');
 
-await test.initScene();
+test.initScene();
 
 test.animate();
